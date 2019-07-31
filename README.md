@@ -1,3 +1,6 @@
+## Travis
+[![Build Status](https://travis-ci.com/leona-ha/Movie-Recommender.svg?branch=master)](https://travis-ci.com/leona-ha/Movie-Recommender)
+
 ## Movie-Recommender
 Build a software system that gives movie recommendations and create a web interface using Flask.
 
