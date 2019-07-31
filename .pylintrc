@@ -1,0 +1,2 @@
+[pylint]
+ disable=C0103,C0111,line-too-long,too-few-public-methods,fixme,too-many-arguments
