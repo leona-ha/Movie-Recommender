@@ -1,7 +1,7 @@
 alabaster==0.7.12
-anaconda-client==1.7.2
-anaconda-navigator==1.9.7
-anaconda-project==0.8.2
+anaconda-client<=1.7.2
+anaconda-navigator<=1.9.7
+anaconda-project<=0.8.2
 appnope==0.1.0
 appscript==1.0.1
 arrow==0.14.3
