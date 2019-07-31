@@ -41,7 +41,6 @@ MarkupSafe==1.1.1
 matplotlib==3.0.3
 mccabe==0.6.1
 mistune==0.8.4
-mkl-random==1.0.2
 more-itertools==6.0.0
 mpmath==1.1.0
 msgpack==0.6.1
@@ -70,7 +69,6 @@ partd==0.3.10
 path.py==11.5.0
 pathlib2==2.3.3
 patsy==0.5.1
-paul-movie-recommender==0.1.0
 pep8==1.7.1
 pexpect==4.6.0
 pickleshare==0.7.5
