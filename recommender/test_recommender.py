@@ -1,3 +1,7 @@
+from unittest.mock import MagicMock
+import sqlalchemy
+sqlalchemy.create_engine = MagicMock()
+
 from application import app
 import pytest
 from recommender import get_ml_recommendations
