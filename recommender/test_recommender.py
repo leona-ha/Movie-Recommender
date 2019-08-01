@@ -13,7 +13,7 @@ def test_empty_db(client):
     assert b'movie' in rv.data
 
 def test_recommender():
-    movie = get_ml_recommendations([[('movie1', 'Titanic'), ('rating1', '4'), ('movie2', 'Shrek'), ('rating2', '4'), ('movie3', 'Toy Story'), ('rating3', '5')])
+    movie = get_ml_recommendations([('movie1', 'Titanic'), ('rating1', '4'), ('movie2', 'Shrek'), ('rating2', '4'), ('movie3', 'Toy Story'), ('rating3', '5')])
     assert type(movie) == str
 
 def test_string_entered():
