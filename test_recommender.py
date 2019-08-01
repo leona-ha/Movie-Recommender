@@ -1,4 +1,4 @@
-from application import app
+from recommender/application import app
 @pytest.fixture
 def client():
     app.config['TESTING'] = True
