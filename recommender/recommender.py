@@ -25,7 +25,7 @@ def retrain_nmf():
     R = np.array(session.query(umr).all()).T
     #create a model and set the hyperparameters
     # model assumes R ~ PQ'
-    model = NMF(n_components=2, init='random', random_state=10,)
+    model = NMF(n_components=10, init='random', random_state=10,)
     model.fit(R)
     Q = model.components_  # movie-genre matrix
     P = model.transform(R)  # user-genre matrix
@@ -70,6 +70,7 @@ def get_ml_recommendations(user_input):
     Q = model.components_
     #in this case, a new user providing ratings for the 3 movies.
     P = model.transform(query)
+
     recommendation = np.dot(P,Q)[0] #take the result of the prediction
     recommendation = np.argsort(recommendation) #get the index of the best values
     random = recommendation[-5:][np.random.randint(0,4)] # pick one at random
