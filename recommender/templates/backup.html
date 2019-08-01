@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <title>Movie Recommender!</title>
+  </head>
+
+  <body>
+
+    <!-- I REMOVED A . FROM NAVBAR WHICH RESPACED MY OPTIONS NICELY -->
+    <!-- WE CAN ALSO SIMPLIY THE PATH IN THE HREF HERE TO POINT LOCALLY -->
+    <div class='navbar bg-dark text-light'>
+      <a class ='text-light' href="/">Home</a>
+      <a class ='text-light' href="/train">Retrain my AI!</a>
+    </div>
+
+    <!-- WRAP EVERYTHING IN CONTAINERS IN THE SITE BECAUSE FORMATTING IS EASIER-->
+  <div class="container">
+    <img class="rounded mx-auto d-block mt-2" style="width: 700px; height: 226px !important;" src="https://assets.germanposters.de/products/39ed/monet-claude-seerosen-ii-original.jpg" alt="monet-claude-seerosen" width="728" height="485" data-src="https://assets.germanposters.de/products/39ed/monet-claude-seerosen-ii-original.jpg">
+  </div>
+
+    <div class = "container mt-1">
+    <div class = "jumbotron bg-light text-dark mt-3 mr-1 mb-1 ml-1">
+      <h1 class='text-center'> Welcome to our machine-learning movie recommender! </h1>
+      <hr class="my-4">
+      <h5 class='text-center'>Simple Movie Recommendations based on NMF model</h5>
+    </div>
+    </div>
+
+
+
+<div class = "container mt-3">
+  <div class = "jumbotron bg-light text-dark mt-3 mr-1 mb-1 ml-1">
+
+  <h5 class='text-center'>Please enter three movies and rare them on a scale from 1 to 5 </h5>
+
+  <form action='/recommender'>
+    <div class='form-group'>
+        <input class="form-control" name='Movie1' autocomplete='off' placeholder='Enter First Movie Title'>
+    </div>
+    <div class="form-check form-check-inline"> </br>
+      <input class="form-check-input" type="radio" id="inlineCheckbox1" name = "rating1" value="1" >
+      <label class="form-check-label" for="inlineCheckbox1">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" id="inlineCheckbox2" name = "rating1" value="2" >
+      <label class="form-check-label" for="inlineCheckbox2">2</label>
+    </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox3" name = "rating1" value="3" >
+    <label class="form-check-label" for="inlineCheckbox3">3</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox3" name = "rating1" value="4" >
+    <label class="form-check-label" for="inlineCheckbox3">4</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox3" name = "rating1" value="5" >
+    <label class="form-check-label" for="inlineCheckbox3">5</label>
+  </div>
+
+    <div class='form-group'>
+        <input class="form-control" name='Movie2' autocomplete='off' placeholder='Enter Second Movie Title'>
+    </div>
+
+      <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox1" name = "rating2" value="1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+    </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox2" name = "rating2" value="2">
+    <label class="form-check-label" for="inlineCheckbox2">2</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox3" name = "rating2" value="3">
+    <label class="form-check-label" for="inlineCheckbox3">3</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox3" name = "rating2" value="4">
+    <label class="form-check-label" for="inlineCheckbox3">4</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox3" name = "rating2" value="5">
+    <label class="form-check-label" for="inlineCheckbox3">5</label> <br />
+  </div>
+
+    <div class='form-group'>
+        <input class="form-control" name='Movie3' autocomplete='off' placeholder='Enter Third Movie Title'>
+    </div>
+
+    <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox1" name = "rating3" value="1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+    </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox2" name = "rating3" value="2">
+    <label class="form-check-label" for="inlineCheckbox2">2</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox3" name = "rating3" value="3">
+    <label class="form-check-label" for="inlineCheckbox3">3</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox3" name = "rating3" value="4">
+    <label class="form-check-label" for="inlineCheckbox3">4</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" id="inlineCheckbox3" name = "rating3" value="5">
+    <label class="form-check-label" for="inlineCheckbox3">5</label>
+  </div>
+
+    <input class = 'input-submit' type='submit' value='Get Recommendations!'>
+  </form>
+
+</div>
+
+
+<div class = "container mt-5 mb-2">
+<footer class = "bg-light text-dark">
+    <div class = "container">
+        &copy; 2019 SIGMOID_SAFFRON
+    </div>
+</footer>
+</div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
