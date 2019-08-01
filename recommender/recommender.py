@@ -59,7 +59,7 @@ def get_ml_recommendations(user_input):
 
     #create an array of len == no. of columns in umr, works because umr is transposed
     data_len = session.query(umr).count()
-    query = np.full(data_len, 0.0) #fill it with median rating
+    query = np.full(data_len, 3.5) #fill it with median rating
 
 
     #except for relevant film titles, which are filled with the rating
@@ -73,6 +73,6 @@ def get_ml_recommendations(user_input):
 
     recommendation = np.dot(P,Q)[0] #take the result of the prediction
     recommendation = np.argsort(recommendation) #get the index of the best values
-    random = recommendation[-5:][np.random.randint(0,4)] # pick one at random
+    random = recommendation[-10:][np.random.randint(0,4)] # pick one at random
     film = session.query(movies.columns.title).filter(movies.columns.index == f'{random}').all()[0][0]
     return str(film)

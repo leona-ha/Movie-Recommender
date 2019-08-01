@@ -11,7 +11,6 @@ def hello_world():
 @app.route('/recommender')
 def show_recommender():
     user_input = list(request.args.to_dict().items())
-    print(user_input)
     try:
         recommendation = get_ml_recommendations(user_input)
     except(IndexError):
