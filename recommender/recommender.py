@@ -7,6 +7,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Table
 from flask import render_template
+import os
+
 
 engine = create_engine(f'postgres://postgres:postgres@localhost/movielens')
 base = declarative_base(engine)
@@ -32,7 +34,7 @@ def retrain_nmf():
     error = model.reconstruction_err_ #reconstruction error
     nR = np.dot(P, Q) #the reconstructed matrix
     #pickle my model
-    list_pickle_path = 'nmf.pkl'
+    list_pickle_path = os.path.dirname(os.path.abspath(__file__))+'/nmf.pkl'
     nmf_pickle = open(list_pickle_path, 'wb')
     picklerick.dump(model, nmf_pickle)
     nmf_pickle.close()
@@ -41,7 +43,7 @@ def retrain_nmf():
 
 def get_ml_recommendations(user_input):
     #load an nmf model
-    list_pickle_path = 'nmf.pkl'
+    list_pickle_path = os.path.dirname(os.path.abspath(__file__))+'/nmf.pkl'
     nmf_unpickle = open(list_pickle_path, 'rb')
     model = picklerick.load(nmf_unpickle)
 
