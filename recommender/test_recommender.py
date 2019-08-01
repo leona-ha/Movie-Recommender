@@ -1,4 +1,7 @@
-from recommender/application import app
+from application import app
+import pytest
+from recommender import get_ml_recommendations
+
 @pytest.fixture
 def client():
     app.config['TESTING'] = True
