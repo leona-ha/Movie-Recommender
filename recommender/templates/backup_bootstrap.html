@@ -4,13 +4,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="static/favicon.ico" crossorigin="anonymous" />
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="static/custom.css" crossorigin="anonymous">
 
 
-    <title>Movie Recommender</title>
+    <title>Movie Recommender!</title>
   </head>
 
   <body>
@@ -27,14 +27,13 @@
                 <br>
                 <form class="form-signin" action='/recommender'>
                   <div class="form-label-group">
-                    <input type="text" id="movie1" class="form-control" name='movie1' list="json-datalist" autocomplete='off' placeholder="Enter First Movie Title" required>
+                    <input type="text" id="movie1" class="form-control" name='movie1' autocomplete='off' placeholder="Enter First Movie Title" required autofocus>
                     <label for="movie1">Enter First Movie Title</label>
-                    <datalist id="json-datalist"></datalist>
                   </div>
 
                   <div class='text-center'>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="inlineCheckbox1" name = "rating1" value="1" required >
+                    <div class="form-check form-check-inline"> </br>
+                      <input class="form-check-input" type="radio" id="inlineCheckbox1" name = "rating1" value="1" >
                       <label class="form-check-label" for="inlineCheckbox1">1</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -58,14 +57,14 @@
                   <hr>
 
                   <div class="form-label-group">
-                    <input type="text" id="movie2" class="form-control" name="movie2" list="json-datalist" autocomplete='off' placeholder="Enter Second Movie Title" required>
+                    <input type="text" id="movie2" class="form-control" name="movie2" placeholder="Enter Second Movie Title" required>
                     <label for="movie2">Enter Second Movie Title</label>
                   </div>
 
                   <div>
                     <div class='text-center'>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox1" name="rating2" value="1" required >
+                      <div class="form-check form-check-inline"> </br>
+                        <input class="form-check-input" type="radio" id="inlineCheckbox1" name="rating2" value="1" >
                         <label class="form-check-label" for="inlineCheckbox1">1</label>
                       </div>
                       <div class="form-check form-check-inline">
@@ -89,14 +88,14 @@
                   <hr>
 
                   <div class="form-label-group">
-                    <input type="text" id="movie3" class="form-control" name="movie3" list="json-datalist" autocomplete='off' placeholder="Enter Third Movie Title" required>
+                    <input type="text" id="movie3" class="form-control" name="movie3" placeholder="Enter Third Movie Title" required>
                     <label for="movie3">Enter Third Movie Title</label>
                   </div>
 
                   <div>
                       <div class='text-center'>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="inlineCheckbox1" name = "rating3" value="1" required>
+                      <div class="form-check form-check-inline"> </br>
+                      <input class="form-check-input" type="radio" id="inlineCheckbox1" name = "rating3" value="1" >
                       <label class="form-check-label" for="inlineCheckbox1">1</label>
                       </div>
                       <div class="form-check form-check-inline">
@@ -131,7 +130,3 @@
           </div>
         </div>
       </div>
-      <script type="text/javascript" src="static/movies.js"></script>
-      <script type="text/javascript" src="static/datalist.js"></script>
-      </body>
-      </html>
