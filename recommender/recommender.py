@@ -74,6 +74,8 @@ def get_ml_recommendations(user_input):
 
     recommendation = np.dot(P,Q)[0] #take the result of the prediction
     recommendation = np.argsort(recommendation) #get the index of the best values
+    recommendation = [x for x in recommendation if x not in movie_ids]
     random = recommendation[-10:][np.random.randint(0,9)] # pick one at random
+    print(session.query(movies.columns.title).filter(movies.columns.index == f'{random}').all())
     film = session.query(movies.columns.title).filter(movies.columns.index == f'{random}').all()[0][0]
     return str(film)

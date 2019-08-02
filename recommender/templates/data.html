@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/custom.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/data.css" crossorigin="anonymous">
 
 
     <title>Movie Recommender!</title>
@@ -22,8 +22,18 @@
                  <!-- Background image for card set in CSS! -->
               </div>
               <div class="card-body">
-                <h5 class="card-title text-center">Our Recommendation: </h5>
-                <div class="row text-center">{{ data }}</div>
+                <h3 class="card-title text-center font-weight-normal text-secondary">Our Recommendation: </h3>
+                <h4 class="text-center">{{ data }}</h4>
+                <br> <br> <hr>
+                <div class="col text-center">
+                <form action="/">
+                  <button class="btn btn-lg btn-outline-info btn-block text-uppercase" type="submit">Enter New Movies</button>
+                </form>
+                <br>
+                <form action="/train">
+                  <button class="btn btn-lg btn-outline-success btn-block text-uppercase" type="submit">Retrain My Model</button>
+                </form>
+                </div>
               </div>
             </div>
           </div>
