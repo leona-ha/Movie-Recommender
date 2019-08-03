@@ -14,3 +14,4 @@ After discovering these hidden features we should be able to predict a rating wi
 * Task: Find two matrices P (user * features) and Q (movie * features) such that their product approximates R (the User * Movie matrix)
 
 ### Final product: A Web Interface running the NMF prediction on the server
+<img width="744" alt="Bildschirmfoto 2019-08-03 um 14 49 11" src="https://user-images.githubusercontent.com/50407361/62412319-fea51e00-b600-11e9-937a-ed3a8978e474.png">
